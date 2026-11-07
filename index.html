@@ -14,8 +14,8 @@
 }
 
 body {
-    background: #fff;
-    color: #171717;
+    background: #f8f8f8;
+    color: #222;
 }
 
 header {
@@ -26,211 +26,134 @@ header {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    gap: 15px;
 }
 
-.logo {
-    font-size: 23px;
-    letter-spacing: 3px;
+header h2 {
+    letter-spacing: 2px;
 }
 
 nav a {
     color: white;
     text-decoration: none;
-    margin-left: 22px;
+    margin-left: 20px;
 }
 
 .hero {
-    min-height: 430px;
-    background: linear-gradient(90deg,
-        rgba(0,0,0,.75),
-        rgba(0,0,0,.15)),
-        url("https://images.unsplash.com/photo-1483985988355-763728e1935b?w=1400");
-    background-size: cover;
-    background-position: center;
+    background: #222;
     color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 60px 9%;
+    padding: 85px 8%;
+    text-align: center;
 }
 
 .hero h1 {
-    font-size: 48px;
-    max-width: 550px;
-    margin-bottom: 20px;
-}
-
-.hero p {
-    font-size: 17px;
-    margin-bottom: 25px;
-}
-
-.btn {
-    display: inline-block;
-    width: fit-content;
-    padding: 14px 28px;
-    background: white;
-    color: black;
-    text-decoration: none;
-    font-weight: bold;
-    border: none;
-    cursor: pointer;
-}
-
-.section {
-    padding: 65px 8%;
-}
-
-.section-title {
-    text-align: center;
-    font-size: 30px;
+    font-size: 42px;
     margin-bottom: 15px;
 }
 
-.subtitle {
+.hero p {
+    margin-bottom: 20px;
+}
+
+.section {
+    padding: 50px 8%;
+}
+
+.section h2 {
     text-align: center;
-    color: #777;
     margin-bottom: 30px;
-}
-
-.search {
-    display: block;
-    width: 100%;
-    max-width: 450px;
-    padding: 14px;
-    margin: 0 auto 25px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
-.categories {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 35px;
-}
-
-.categories button {
-    padding: 11px 20px;
-    background: white;
-    border: 1px solid #222;
-    cursor: pointer;
-}
-
-.categories button.active,
-.categories button:hover {
-    background: #111;
-    color: white;
 }
 
 .products {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    grid-template-columns: repeat(auto-fit,minmax(230px,1fr));
     gap: 25px;
 }
 
 .product {
-    border: 1px solid #eee;
-    padding: 12px;
-    transition: .3s;
-}
-
-.product:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 20px #ddd;
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
 }
 
 .product img {
     width: 100%;
-    height: 270px;
+    height: 250px;
     object-fit: cover;
 }
 
 .product h3 {
-    margin: 15px 0 8px;
+    margin: 12px 0;
 }
 
 .price {
     font-weight: bold;
-    margin-bottom: 13px;
+    margin-bottom: 12px;
 }
 
-.buy {
+select, input {
+    width: 100%;
+    padding: 11px;
+    margin: 7px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.product button {
     width: 100%;
     padding: 12px;
     background: #111;
     color: white;
     border: none;
     cursor: pointer;
+    margin-top: 10px;
 }
 
 .cart {
-    background: #f5f5f5;
+    background: white;
     padding: 25px;
     margin-top: 40px;
-    border-radius: 5px;
+    border-radius: 8px;
 }
 
-.cart h2 {
-    margin-bottom: 20px;
-}
-
-.cart-row {
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
-    padding: 12px 0;
+.cart-item {
     border-bottom: 1px solid #ddd;
+    padding: 15px 0;
 }
 
-.remove {
-    background: #b52c2c;
+.cart-item button {
+    padding: 6px 12px;
+    background: #b22222;
     color: white;
     border: none;
-    padding: 5px 10px;
+    margin-top: 8px;
     cursor: pointer;
 }
 
-.total {
-    margin-top: 20px;
-    font-size: 20px;
-    font-weight: bold;
-}
-
 .checkout {
-    margin-top: 18px;
     background: #168b48;
     color: white;
-    padding: 14px 22px;
+    padding: 14px 20px;
     border: none;
+    margin-top: 20px;
     cursor: pointer;
 }
 
 footer {
     background: #111;
     color: white;
-    padding: 35px;
+    padding: 25px;
     text-align: center;
+    margin-top: 40px;
 }
 
 @media(max-width:600px) {
     header {
         flex-direction: column;
-    }
-
-    nav a {
-        margin: 0 7px;
-        font-size: 13px;
+        gap: 15px;
     }
 
     .hero h1 {
-        font-size: 34px;
-    }
-
-    .cart-row {
-        font-size: 13px;
+        font-size: 30px;
     }
 }
 </style>
@@ -239,7 +162,7 @@ footer {
 <body>
 
 <header>
-    <h2 class="logo">FADHILAH FASHION</h2>
+    <h2>FADHILAH FASHION</h2>
     <nav>
         <a href="#home">Home</a>
         <a href="#produk">Produk</a>
@@ -248,48 +171,34 @@ footer {
 </header>
 
 <section class="hero" id="home">
-    <h1>STYLE YOUR EVERYDAY</h1>
-    <p>Discover your style with our latest fashion collection.</p>
-    <a href="#produk" class="btn">SHOP NOW</a>
+    <h1>FASHION FOR EVERYONE</h1>
+    <p>Upgrade your style with Fadhilah Fashion.</p>
 </section>
 
 <section class="section" id="produk">
 
-    <h2 class="section-title">OUR COLLECTION</h2>
-    <p class="subtitle">Temukan koleksi fashion favoritmu.</p>
+<h2>KOLEKSI PRODUK</h2>
 
-    <input
-        type="text"
-        class="search"
-        id="search"
-        placeholder="Cari produk..."
-        oninput="showProducts()"
-    >
+<div class="products" id="productList"></div>
 
-    <div class="categories">
-        <button class="active" onclick="filterCategory('Semua',this)">Semua</button>
-        <button onclick="filterCategory('Kaos',this)">Kaos</button>
-        <button onclick="filterCategory('Hoodie',this)">Hoodie</button>
-        <button onclick="filterCategory('Kemeja',this)">Kemeja</button>
-        <button onclick="filterCategory('Jaket',this)">Jaket</button>
+<div class="cart" id="keranjang">
+    <h2>KERANJANG BELANJA</h2>
+
+    <div id="cartItems">
+        Keranjang masih kosong.
     </div>
 
-    <div class="products" id="productList"></div>
+    <h3 id="total">Total: Rp0</h3>
 
-    <div class="cart" id="keranjang">
-        <h2>Keranjang Belanja</h2>
-        <div id="cartItems">Keranjang masih kosong.</div>
-        <div class="total" id="total">Total: Rp0</div>
-        <button class="checkout" onclick="checkout()">
-            Checkout WhatsApp
-        </button>
-    </div>
+    <button class="checkout" onclick="checkout()">
+        Checkout WhatsApp
+    </button>
+</div>
 
 </section>
 
 <footer>
     <h3>FADHILAH FASHION</h3>
-    <p>Fashion for Everyone.</p>
     <p>© 2026 Fadhilah Fashion</p>
 </footer>
 
@@ -297,146 +206,213 @@ footer {
 
 const products = [
     {
+        id: 1,
         name: "Basic T-Shirt",
-        category: "Kaos",
         price: 75000,
-        image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500"
+        stock: 20,
+        image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500",
+        colors: ["Hitam", "Putih", "Abu-abu"]
     },
     {
+        id: 2,
         name: "Premium Hoodie",
-        category: "Hoodie",
         price: 150000,
-        image: "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=500"
+        stock: 15,
+        image: "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=500",
+        colors: ["Hitam", "Cream", "Navy"]
     },
     {
+        id: 3,
         name: "Casual Shirt",
-        category: "Kemeja",
         price: 120000,
-        image: "https://images.unsplash.com/photo-1598033129183-c4f50c736f10?w=500"
+        stock: 12,
+        image: "https://images.unsplash.com/photo-1598033129183-c4f50c736f10?w=500",
+        colors: ["Putih", "Biru", "Hitam"]
     },
     {
+        id: 4,
         name: "Fashion Jacket",
-        category: "Jaket",
         price: 180000,
-        image: "https://images.unsplash.com/photo-1551028719-00167b16eac5?w=500"
-    },
-    {
-        name: "White T-Shirt",
-        category: "Kaos",
-        price: 85000,
-        image: "https://images.unsplash.com/photo-1503341504253-dff4815485f1?w=500"
-    },
-    {
-        name: "Street Hoodie",
-        category: "Hoodie",
-        price: 165000,
-        image: "https://images.unsplash.com/photo-1578681994506-b8f463449011?w=500"
+        stock: 10,
+        image: "https://images.unsplash.com/photo-1551028719-00167b16eac5?w=500",
+        colors: ["Hitam", "Coklat", "Abu-abu"]
     }
 ];
 
-let cart = [];
-let categorySelected = "Semua";
+const sizes = ["S", "M", "L", "XL", "XXL"];
 
-function formatRupiah(number) {
-    return "Rp" + number.toLocaleString("id-ID");
+let cart = [];
+
+function rupiah(value) {
+    return "Rp" + value.toLocaleString("id-ID");
 }
 
 function showProducts() {
-    const keyword = document.getElementById("search").value.toLowerCase();
-
-    const filtered = products
-        .map((product,index) => ({...product,index}))
-        .filter(product =>
-            (categorySelected === "Semua" ||
-            product.category === categorySelected) &&
-            product.name.toLowerCase().includes(keyword)
-        );
 
     const list = document.getElementById("productList");
 
-    if(filtered.length === 0) {
-        list.innerHTML = "<p>Produk tidak ditemukan.</p>";
-        return;
-    }
-
-    list.innerHTML = filtered.map(product => `
+    list.innerHTML = products.map((p, index) => `
         <div class="product">
-            <img src="${product.image}" alt="${product.name}">
-            <h3>${product.name}</h3>
-            <p class="price">${formatRupiah(product.price)}</p>
-            <button class="buy" onclick="addCart(${product.index})">
+
+            <img src="${p.image}" alt="${p.name}">
+
+            <h3>${p.name}</h3>
+
+            <p class="price">${rupiah(p.price)}</p>
+
+            <p>Stok tersedia: ${p.stock}</p>
+
+            <label>Ukuran:</label>
+
+            <select id="size-${index}">
+                ${sizes.map(s => `
+                    <option value="${s}">${s}</option>
+                `).join("")}
+            </select>
+
+            <label>Warna:</label>
+
+            <select id="color-${index}">
+                ${p.colors.map(c => `
+                    <option value="${c}">${c}</option>
+                `).join("")}
+            </select>
+
+            <label>Jumlah:</label>
+
+            <input
+                type="number"
+                id="qty-${index}"
+                value="1"
+                min="1"
+                max="${p.stock}"
+            >
+
+            <button onclick="addCart(${index})">
                 Tambah ke Keranjang
             </button>
+
         </div>
     `).join("");
 }
 
-function filterCategory(category,button) {
-    categorySelected = category;
-
-    document.querySelectorAll(".categories button")
-        .forEach(btn => btn.classList.remove("active"));
-
-    button.classList.add("active");
-
-    showProducts();
-}
-
 function addCart(index) {
-    cart.push(products[index]);
+
+    const product = products[index];
+
+    const size = document.getElementById("size-" + index).value;
+    const color = document.getElementById("color-" + index).value;
+    const qty = Number(document.getElementById("qty-" + index).value);
+
+    if (!Number.isInteger(qty) || qty < 1 || qty > product.stock) {
+        alert("Jumlah pembelian melebihi stok atau tidak valid!");
+        return;
+    }
+
+    const existing = cart.find(item =>
+        item.id === product.id &&
+        item.size === size &&
+        item.color === color
+    );
+
+    const alreadyOrdered = existing ? existing.qty : 0;
+
+    if (alreadyOrdered + qty > product.stock) {
+        alert("Jumlah produk melebihi stok yang tersedia!");
+        return;
+    }
+
+    if (existing) {
+        existing.qty += qty;
+    } else {
+        cart.push({
+            id: product.id,
+            name: product.name,
+            price: product.price,
+            size: size,
+            color: color,
+            qty: qty
+        });
+    }
+
     showCart();
-    alert("Produk berhasil ditambahkan!");
+
+    alert("Produk berhasil ditambahkan ke keranjang!");
 }
 
 function removeCart(index) {
-    cart.splice(index,1);
+    cart.splice(index, 1);
     showCart();
 }
 
 function showCart() {
+
     const container = document.getElementById("cartItems");
 
-    if(cart.length === 0) {
+    if (cart.length === 0) {
         container.innerHTML = "Keranjang masih kosong.";
     } else {
-        container.innerHTML = cart.map((item,index) => `
-            <div class="cart-row">
-                <span>${item.name} - ${formatRupiah(item.price)}</span>
-                <button class="remove" onclick="removeCart(${index})">
-                    Hapus
+
+        container.innerHTML = cart.map((item, index) => `
+            <div class="cart-item">
+
+                <h4>${item.name}</h4>
+
+                <p>Ukuran: ${item.size}</p>
+                <p>Warna: ${item.color}</p>
+                <p>Jumlah: ${item.qty}</p>
+
+                <p>Harga: ${rupiah(item.price * item.qty)}</p>
+
+                <button onclick="removeCart(${index})">
+                    Hapus Produk
                 </button>
+
             </div>
         `).join("");
     }
 
-    const total = cart.reduce((sum,item) => sum + item.price,0);
+    const total = cart.reduce(
+        (sum, item) => sum + item.price * item.qty,
+        0
+    );
 
     document.getElementById("total").innerText =
-        "Total: " + formatRupiah(total);
+        "Total: " + rupiah(total);
 }
 
 function checkout() {
-    if(cart.length === 0) {
+
+    if (cart.length === 0) {
         alert("Keranjang masih kosong!");
         return;
     }
 
-    // GANTI DENGAN NOMOR WHATSAPP TOKO KAMU
+    // GANTI DENGAN NOMOR WHATSAPP TOKO
     const phone = "6281234567890";
 
     let message = "Halo Fadhilah Fashion, saya ingin memesan:\n\n";
 
-    cart.forEach((item,index) => {
-        message += `${index+1}. ${item.name} - ${formatRupiah(item.price)}\n`;
+    cart.forEach((item, index) => {
+
+        message +=
+            `${index + 1}. ${item.name}\n` +
+            `Ukuran: ${item.size}\n` +
+            `Warna: ${item.color}\n` +
+            `Jumlah: ${item.qty}\n` +
+            `Subtotal: ${rupiah(item.price * item.qty)}\n\n`;
     });
 
-    const total = cart.reduce((sum,item) => sum + item.price,0);
+    const total = cart.reduce(
+        (sum, item) => sum + item.price * item.qty,
+        0
+    );
 
-    message += "\nTotal: " + formatRupiah(total);
+    message += "TOTAL: " + rupiah(total);
 
     window.open(
-        "https://wa.me/" + phone + "?text=" +
-        encodeURIComponent(message),
+        "https://wa.me/" + phone +
+        "?text=" + encodeURIComponent(message),
         "_blank"
     );
 }
