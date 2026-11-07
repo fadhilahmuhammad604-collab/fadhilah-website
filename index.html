@@ -1,77 +1,450 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website Fadhilah</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FADHILAH FASHION</title>
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f4f4f4;
-            text-align: center;
-        }
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
 
-        header {
-            background: #172554;
-            color: white;
-            padding: 30px;
-        }
+body {
+    background: #fff;
+    color: #171717;
+}
 
-        nav {
-            background: #1e40af;
-            padding: 15px;
-        }
+header {
+    background: #111;
+    color: white;
+    padding: 22px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 15px;
-        }
+.logo {
+    font-size: 23px;
+    letter-spacing: 3px;
+}
 
-        .content {
-            padding: 60px 20px;
-        }
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 22px;
+}
 
-        button {
-            background: #2563eb;
-            color: white;
-            padding: 12px 25px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-        }
-    </style>
+.hero {
+    min-height: 430px;
+    background: linear-gradient(90deg,
+        rgba(0,0,0,.75),
+        rgba(0,0,0,.15)),
+        url("https://images.unsplash.com/photo-1483985988355-763728e1935b?w=1400");
+    background-size: cover;
+    background-position: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 60px 9%;
+}
+
+.hero h1 {
+    font-size: 48px;
+    max-width: 550px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 17px;
+    margin-bottom: 25px;
+}
+
+.btn {
+    display: inline-block;
+    width: fit-content;
+    padding: 14px 28px;
+    background: white;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+.section {
+    padding: 65px 8%;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #777;
+    margin-bottom: 30px;
+}
+
+.search {
+    display: block;
+    width: 100%;
+    max-width: 450px;
+    padding: 14px;
+    margin: 0 auto 25px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.categories {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 35px;
+}
+
+.categories button {
+    padding: 11px 20px;
+    background: white;
+    border: 1px solid #222;
+    cursor: pointer;
+}
+
+.categories button.active,
+.categories button:hover {
+    background: #111;
+    color: white;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 25px;
+}
+
+.product {
+    border: 1px solid #eee;
+    padding: 12px;
+    transition: .3s;
+}
+
+.product:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px #ddd;
+}
+
+.product img {
+    width: 100%;
+    height: 270px;
+    object-fit: cover;
+}
+
+.product h3 {
+    margin: 15px 0 8px;
+}
+
+.price {
+    font-weight: bold;
+    margin-bottom: 13px;
+}
+
+.buy {
+    width: 100%;
+    padding: 12px;
+    background: #111;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.cart {
+    background: #f5f5f5;
+    padding: 25px;
+    margin-top: 40px;
+    border-radius: 5px;
+}
+
+.cart h2 {
+    margin-bottom: 20px;
+}
+
+.cart-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 12px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.remove {
+    background: #b52c2c;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.total {
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.checkout {
+    margin-top: 18px;
+    background: #168b48;
+    color: white;
+    padding: 14px 22px;
+    border: none;
+    cursor: pointer;
+}
+
+footer {
+    background: #111;
+    color: white;
+    padding: 35px;
+    text-align: center;
+}
+
+@media(max-width:600px) {
+    header {
+        flex-direction: column;
+    }
+
+    nav a {
+        margin: 0 7px;
+        font-size: 13px;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .cart-row {
+        font-size: 13px;
+    }
+}
+</style>
 </head>
 
 <body>
 
-    <header>
-        <h1>Website Fadhilah</h1>
-        <p>Selamat Datang di Website Saya</p>
-    </header>
-
+<header>
+    <h2 class="logo">FADHILAH FASHION</h2>
     <nav>
-        <a href="#">Beranda</a>
-        <a href="#tentang">Tentang</a>
-        <a href="#kontak">Kontak</a>
+        <a href="#home">Home</a>
+        <a href="#produk">Produk</a>
+        <a href="#keranjang">Keranjang</a>
     </nav>
+</header>
 
-    <div class="content">
-        <h2>Halo, Selamat Datang!</h2>
-        <p>Ini adalah website pertama saya.</p>
+<section class="hero" id="home">
+    <h1>STYLE YOUR EVERYDAY</h1>
+    <p>Discover your style with our latest fashion collection.</p>
+    <a href="#produk" class="btn">SHOP NOW</a>
+</section>
 
-        <button onclick="alert('Terima kasih sudah berkunjung!')">
-            Klik Saya
-        </button>
+<section class="section" id="produk">
 
-        <h2 id="tentang">Tentang Saya</h2>
-        <p>Website ini dibuat menggunakan HTML dan CSS.</p>
+    <h2 class="section-title">OUR COLLECTION</h2>
+    <p class="subtitle">Temukan koleksi fashion favoritmu.</p>
 
-        <h2 id="kontak">Kontak</h2>
-        <p>Hubungi saya melalui email.</p>
+    <input
+        type="text"
+        class="search"
+        id="search"
+        placeholder="Cari produk..."
+        oninput="showProducts()"
+    >
+
+    <div class="categories">
+        <button class="active" onclick="filterCategory('Semua',this)">Semua</button>
+        <button onclick="filterCategory('Kaos',this)">Kaos</button>
+        <button onclick="filterCategory('Hoodie',this)">Hoodie</button>
+        <button onclick="filterCategory('Kemeja',this)">Kemeja</button>
+        <button onclick="filterCategory('Jaket',this)">Jaket</button>
     </div>
+
+    <div class="products" id="productList"></div>
+
+    <div class="cart" id="keranjang">
+        <h2>Keranjang Belanja</h2>
+        <div id="cartItems">Keranjang masih kosong.</div>
+        <div class="total" id="total">Total: Rp0</div>
+        <button class="checkout" onclick="checkout()">
+            Checkout WhatsApp
+        </button>
+    </div>
+
+</section>
+
+<footer>
+    <h3>FADHILAH FASHION</h3>
+    <p>Fashion for Everyone.</p>
+    <p>© 2026 Fadhilah Fashion</p>
+</footer>
+
+<script>
+
+const products = [
+    {
+        name: "Basic T-Shirt",
+        category: "Kaos",
+        price: 75000,
+        image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500"
+    },
+    {
+        name: "Premium Hoodie",
+        category: "Hoodie",
+        price: 150000,
+        image: "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=500"
+    },
+    {
+        name: "Casual Shirt",
+        category: "Kemeja",
+        price: 120000,
+        image: "https://images.unsplash.com/photo-1598033129183-c4f50c736f10?w=500"
+    },
+    {
+        name: "Fashion Jacket",
+        category: "Jaket",
+        price: 180000,
+        image: "https://images.unsplash.com/photo-1551028719-00167b16eac5?w=500"
+    },
+    {
+        name: "White T-Shirt",
+        category: "Kaos",
+        price: 85000,
+        image: "https://images.unsplash.com/photo-1503341504253-dff4815485f1?w=500"
+    },
+    {
+        name: "Street Hoodie",
+        category: "Hoodie",
+        price: 165000,
+        image: "https://images.unsplash.com/photo-1578681994506-b8f463449011?w=500"
+    }
+];
+
+let cart = [];
+let categorySelected = "Semua";
+
+function formatRupiah(number) {
+    return "Rp" + number.toLocaleString("id-ID");
+}
+
+function showProducts() {
+    const keyword = document.getElementById("search").value.toLowerCase();
+
+    const filtered = products
+        .map((product,index) => ({...product,index}))
+        .filter(product =>
+            (categorySelected === "Semua" ||
+            product.category === categorySelected) &&
+            product.name.toLowerCase().includes(keyword)
+        );
+
+    const list = document.getElementById("productList");
+
+    if(filtered.length === 0) {
+        list.innerHTML = "<p>Produk tidak ditemukan.</p>";
+        return;
+    }
+
+    list.innerHTML = filtered.map(product => `
+        <div class="product">
+            <img src="${product.image}" alt="${product.name}">
+            <h3>${product.name}</h3>
+            <p class="price">${formatRupiah(product.price)}</p>
+            <button class="buy" onclick="addCart(${product.index})">
+                Tambah ke Keranjang
+            </button>
+        </div>
+    `).join("");
+}
+
+function filterCategory(category,button) {
+    categorySelected = category;
+
+    document.querySelectorAll(".categories button")
+        .forEach(btn => btn.classList.remove("active"));
+
+    button.classList.add("active");
+
+    showProducts();
+}
+
+function addCart(index) {
+    cart.push(products[index]);
+    showCart();
+    alert("Produk berhasil ditambahkan!");
+}
+
+function removeCart(index) {
+    cart.splice(index,1);
+    showCart();
+}
+
+function showCart() {
+    const container = document.getElementById("cartItems");
+
+    if(cart.length === 0) {
+        container.innerHTML = "Keranjang masih kosong.";
+    } else {
+        container.innerHTML = cart.map((item,index) => `
+            <div class="cart-row">
+                <span>${item.name} - ${formatRupiah(item.price)}</span>
+                <button class="remove" onclick="removeCart(${index})">
+                    Hapus
+                </button>
+            </div>
+        `).join("");
+    }
+
+    const total = cart.reduce((sum,item) => sum + item.price,0);
+
+    document.getElementById("total").innerText =
+        "Total: " + formatRupiah(total);
+}
+
+function checkout() {
+    if(cart.length === 0) {
+        alert("Keranjang masih kosong!");
+        return;
+    }
+
+    // GANTI DENGAN NOMOR WHATSAPP TOKO KAMU
+    const phone = "6281234567890";
+
+    let message = "Halo Fadhilah Fashion, saya ingin memesan:\n\n";
+
+    cart.forEach((item,index) => {
+        message += `${index+1}. ${item.name} - ${formatRupiah(item.price)}\n`;
+    });
+
+    const total = cart.reduce((sum,item) => sum + item.price,0);
+
+    message += "\nTotal: " + formatRupiah(total);
+
+    window.open(
+        "https://wa.me/" + phone + "?text=" +
+        encodeURIComponent(message),
+        "_blank"
+    );
+}
+
+showProducts();
+showCart();
+
+</script>
 
 </body>
 </html>
